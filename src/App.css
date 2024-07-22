@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: rgb(30, 41, 59);
+}
+
+input {
+    border: 1px solid black;
+}
+
+.display, .tracklist, .folder-display, .edit-review {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
