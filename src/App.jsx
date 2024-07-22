@@ -7,7 +7,6 @@ import './App.css';
 export default function App() {
 
   const APIKEY = '888e6c98bc1116359432358b81a0d15e';
-  const ROOT = 'https://ws.audioscrobbler.com/2.0/';
 
   const [artist, setArtist] = useState("");
   const [albumData, setAlbumData] = useState(null);
@@ -23,7 +22,7 @@ export default function App() {
   useEffect(() => {
     async function fetchAlbumData(artist) {
       if (artist) {
-        const url = `${ROOT}?method=artist.gettopalbums&artist=${artist}&api_key=${APIKEY}&format=json`;
+        const url = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=${APIKEY}&format=json`;
         try {
           const response = await fetch(url);
           if (!response.ok) {
@@ -52,10 +51,10 @@ export default function App() {
       hasFetched.current = true;
     }
   }, [artist]);
-
+  
   async function fetchOtherAlbumInfo(artist, album) {
     if (artist && album) {
-      const url = `${ROOT}?method=album.getinfo&api_key=${APIKEY}&artist=${artist}&album=${album}&format=json`;
+      const url = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${APIKEY}&artist=${artist}&album=${album}&format=json`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
