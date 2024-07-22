@@ -7,7 +7,7 @@ import './App.css';
 export default function App() {
 
   const APIKEY = '888e6c98bc1116359432358b81a0d15e';
-  const ROOT = 'http://ws.audioscrobbler.com/2.0/';
+  const ROOT = 'https://ws.audioscrobbler.com/2.0/';
 
   const [artist, setArtist] = useState("");
   const [albumData, setAlbumData] = useState(null);
